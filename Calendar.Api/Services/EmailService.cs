@@ -69,51 +69,60 @@ namespace Calendar.Api.Services
     <meta charset='UTF-8'>
     <style>
         body {{
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f0;
             margin: 0;
             padding: 20px;
         }}
         .container {{
             max-width: 600px;
             margin: 0 auto;
-            background-color: white;
-            border-radius: 10px;
+            background-color: #ffffff;
+            border-radius: 12px;
             padding: 30px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid #2e7d32;
         }}
         .header {{
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #43a047 0%, #1b5e20 100%);
             color: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 10px 10px 0 0;
             text-align: center;
             margin: -30px -30px 20px -30px;
         }}
+        .header h1 {{
+            margin: 0;
+            font-size: 26px;
+        }}
         .event-title {{
             font-size: 24px;
             font-weight: bold;
-            color: #333;
+            color: #2e7d32;
             margin: 20px 0;
         }}
         .event-date {{
             font-size: 18px;
-            color: #667eea;
+            color: #388e3c;
             margin: 10px 0;
+            font-weight: 600;
         }}
         .event-description {{
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
+            background-color: #f1f8e9;
+            padding: 20px;
+            border-right: 4px solid #81c784;
+            border-radius: 4px;
             margin: 20px 0;
-            color: #555;
+            color: #333;
             line-height: 1.6;
         }}
         .footer {{
             text-align: center;
             margin-top: 30px;
-            color: #888;
+            color: #666;
             font-size: 14px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
         }}
     </style>
 </head>
@@ -123,15 +132,15 @@ namespace Calendar.Api.Services
             <h1>📅 תזכורת לאירוע</h1>
         </div>
         
-        <p>שלום {recipientName},</p>
-        <p>רצינו להזכיר לך שיש לך אירוע היום!</p>
+        <p>שלום <strong>{recipientName}</strong>,</p>
+        <p>רצינו להזכיר לך שיש לך אירוע קרוב בלוח השנה:</p>
         
         <div class='event-title'>
-            🎯 {eventTitle}
+            🌿 {eventTitle}
         </div>
         
         <div class='event-date'>
-            📆 תאריך: {eventDate:dd/MM/yyyy} בשעה {eventDate:HH:mm}
+            ⏰ מתי: {eventDate:dd/MM/yyyy} בשעה {eventDate:HH:mm}
         </div>
         
         <div class='event-description'>
@@ -141,8 +150,8 @@ namespace Calendar.Api.Services
         
         <div class='footer'>
             <p>מערכת לוח השנה שלך 🗓️</p>
-            <p style='font-size: 12px; color: #aaa;'>
-                מייל זה נשלח אוטומטית כתזכורת לאירוע שלך
+            <p style='font-size: 12px; color: #999;'>
+                מייל זה נשלח באופן אוטומטי. נא לא להשיב למייל זה.
             </p>
         </div>
     </div>
